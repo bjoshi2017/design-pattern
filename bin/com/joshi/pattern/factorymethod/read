@@ -1,0 +1,89 @@
+*******************Factory Method********************
+Factory Method is based on inheritance but doesn’t require an initialization step.
+
+Prototype requires a complicated initialization of the cloned object.
+
+Abstract Factory classes are often based on a set of Factory Methods, 
+but you can also use Prototype to compose the methods on these classes.
+
+
+Benefit:-
+1)You avoid tight coupling between the creator and the concrete products.
+2)Single Responsibility Principle. You can move the product creation code into one place in the program, 
+making the code easier to support.
+3)Open/Closed Principle. You can introduce new types of products into the program without breaking existing 
+client code.
+
+Drawback:-
+The code may become more complicated since you need to introduce a lot of new subclasses to implement 
+the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy
+ of creator classes.
+ 
+ ****************************Abstract Factory Method*************
+ --produce families of related objects without specifying their concrete classes.
+ --Abstract Factory pattern suggests is to explicitly declare interfaces for each distinct product of the product family
+ --Use the Abstract Factory when your code needs to work with various families of related products, 
+ but you don’t want it to depend on the concrete classes of those products—they might be unknown 
+ beforehand or you simply want to allow for future extensibility.
+ 
+
+UseCase:Consider implementing the Abstract Factory when you have a class with a set of Factory Methods that blur 
+its primary responsibility.
+Ans:In a well-designed program each class is responsible only for one thing. When a class 
+deals with multiple product types, it may be worth extracting its factory methods into a
+stand-alone factory class or a full-blown Abstract Factory implementation.
+
+
+Benefit:-
+1)You avoid tight coupling between the creator and the concrete products.
+2)Single Responsibility Principle. You can move the product creation code into one place in the program, 
+making the code easier to support.
+3)Open/Closed Principle. You can introduce new types of products into the program without breaking existing 
+client code.
+
+Drawback:-
+The code may become more complicated since you need to introduce a lot of new subclasses to implement 
+the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy
+ of creator classes.
+ 
+ 
+ 
+ ********************************Builder
+ --extract the object construction code out of its own class and move it to separate objects called builders.
+ --The Builder pattern can be applied when construction of various 
+ representations of the product involves similar steps that differ only in the details.
+ --The base builder interface defines all possible construction steps, and concrete builders
+  implement these steps to construct particular representations of the product. 
+  Meanwhile, the director class guides the order of construction.
+  
+ Example:--
+ Car creation
+ Device creation
+ House creation
+ 
+ Benefit:
+ --You can construct objects step-by-step, defer construction steps or run steps recursively.
+ --You can reuse the same construction code when building various representations of products.
+ --Single Responsibility Principle. You can isolate complex construction code from the business logic of the product.
+ 
+*******************Prototype 
+*******************Singtlton 
+******************Adapater
+-delegating work to other objects.
+*******************Bridge
+-delegating work to other objects.
+  --Use the Bridge pattern when you want to divide and organize a monolithic class 
+  that has several variants of some functionality (for example, if the class can work with various database servers).
+  --The Bridge pattern lets you split the monolithic class into several class hierarchies. After this,
+   you can change the classes in each hierarchy independently of the classes in the others. 
+   This approach simplifies code maintenance and minimizes the risk of breaking existing code.
+
+Example:--
+Device and Remote
+Building product & Shipping
+ 
+ *************Flyweight
+ Common behaviours(propoerty) of same multiple object we keep at comon place or in single object to save RAM memory.
+ 
+ 
+ 
